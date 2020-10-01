@@ -31,7 +31,9 @@ const scrollOffset = (c, t, horizontal) => {
       ? t.getBoundingClientRect().top + (window.scrollY || window.pageYOffset)
       : getComputedStyle(c).position !== "static"
       ? t.offsetTop
-      : t.offsetTop - c.offsetTop;
+      : getComputedStyle(c).position === "absolute"
+      ? t.offsetTop - c.offsetTop
+      : t.getBoundingClientRect().top + c.scrollTop;
   }
 };
 export default {
