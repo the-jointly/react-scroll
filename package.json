@@ -12,7 +12,8 @@
     "build": "babel modules -d build/npm/modules --ignore '**/__tests__/**' --plugins transform-class-properties && gulp",
     "clean": "rm -rf build/npm/modules",
     "test": "karma start",
-    "start": "npm run examples"
+    "start": "npm run examples",
+    "preinstall": "npx npm-force-resolutions"
   },
   "homepage": "https://github.com/fisshy/react-scroll",
   "bugs": {
@@ -81,5 +82,8 @@
   "directories": {
     "example": "examples"
   },
-  "author": ""
+  "author": "",
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
+  }
 }
